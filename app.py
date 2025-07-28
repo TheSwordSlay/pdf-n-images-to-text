@@ -112,9 +112,9 @@ class PDFProcessor:
             # Create dynamic prompt based on detected language
             prompt_text = f"""You are an AI assistant analyzing an image from a document. Your task is to provide a replacement text description. First, determine the image's primary function and then describe it appropriately.
 
-- If the image is a **photograph, chart, diagram, or graph** that conveys substantive information, provide a detailed description focusing on the key message, data, and subjects shown.
+- If the image is a **photograph, chart, diagram, table, graph, or other things that conveys substantive information** , provide a detailed description focusing on the key message, data, and subjects shown.
 - If the image is a **logo**, simply identify it concisely, like "Logo of [Company Name]".
-- If the image is a **signature**, state that it is a signature. If the name is legible, include it. For example, "Signature of Jane Doe" or "An illegible signature".
+- If the image is a **signature**, state that it is a signature. If the name is legible, include it. For example, "Signature of Jane Doe" or "A signature".
 - If the image is purely **decorative** (e.g., a border, flourish, or abstract graphic), provide a very brief, functional description like "Decorative border".
 
 Analyze the image's importance and function before describing it. Respond entirely in {language}."""
