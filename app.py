@@ -408,7 +408,7 @@ def convert_pdf():
             if result['success']:
                 # Generate output filename
                 base_name = os.path.splitext(filename)[0]
-                output_filename = f"{base_name}_with_image_descriptions.pdf"
+                output_filename = f"{base_name}.pdf"
                 
                 # Return the processed PDF file
                 return send_file(
