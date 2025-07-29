@@ -493,7 +493,6 @@ def convert_pdf_json():
             # Create merged text content
             merged_text = ""
             for page in content:
-                merged_text += f"\n--- Page {page['page_number']} ---\n"
                 
                 # Combine text blocks and image descriptions
                 all_elements = []
@@ -516,14 +515,11 @@ def convert_pdf_json():
                 all_elements.sort(key=lambda x: x['y_pos'])
                 for element in all_elements:
                     merged_text += element['content'] + "\n"
-                
-                merged_text += "\n" + "="*50 + "\n"
             
             return jsonify({
                 'success': True,
                 'detected_language': detected_language,
-                'merged_text': merged_text,
-                'page_details': content
+                'merged_text': merged_text
             })
             
         except Exception as e:
